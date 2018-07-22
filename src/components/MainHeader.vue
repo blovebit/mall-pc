@@ -26,11 +26,11 @@
                 </ul>
                 <ul class="right">
                     <li>
-                        <a @click="openpane">登录</a>
+                        <a @click="openLpane()">登录</a>
                     </li>
 
                     <li>
-                        <a @click="openpane">注册</a>
+                        <a @click="openSpane()">注册</a>
                     </li>
 
                     <li>
@@ -52,13 +52,17 @@
         </div>
         <div v-if="ispaneopen"
             v-bind:is="currentComponent"
+            @click.self.native="closepane"
             @close-pane="closepane"
+            @turn-to-sign-in="openSpane"
+            @turn-to-login="openLpane"
         ></div>
     </div>
 </template>
 
 <script>
 import LoginPane from './LoginPane.vue';
+import SignInPane from './SignInPane.vue';
 export default {
     name: 'MainHeader',
     data () {
@@ -72,12 +76,18 @@ export default {
         closepane () {
             this.ispaneopen = false
         },
-        openpane () {
-            this.ispaneopen = true
+        openLpane () {
+            this.ispaneopen = true;
+            this.currentComponent = LoginPane
+        },
+        openSpane () {
+            this.ispaneopen = true;
+            this.currentComponent = SignInPane
         }
     },
     components: {
-        'login-pane': LoginPane
+        LoginPane,
+        SignInPane
     }
 }
 </script>

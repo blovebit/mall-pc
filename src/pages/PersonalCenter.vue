@@ -102,7 +102,7 @@ export default {
 
 <style scoped>
     .personal-center{
-        padding-top: 3em;
+        padding-top: 2em;
         background: url(../assets/BgPersonalCenter.jpg) center top no-repeat;
     }
     .content{

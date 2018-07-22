@@ -1,7 +1,7 @@
 <template>
-    <p>
+    <div>
         这是个人中心主页
-    </p>
+    </div>
 </template>
 
 <script>
