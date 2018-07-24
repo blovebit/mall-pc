@@ -1,3 +1,6 @@
-# yizhuangw.cn releaseMall app
+# yizhuangw.cn 任务大厅及各角色个人中心
 
-- yizhuangw.cn
+## api需求
+
+[api需求文档](./api_needs.md)约定并行开发过程中，前后端使用一致的json字段处理数据接口。  
+目前接口名称与路径没有约定，待补充。
