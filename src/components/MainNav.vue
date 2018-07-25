@@ -7,7 +7,7 @@
                     <router-link to="/">首页</router-link>
                 </li>
                 <li>
-                    <router-link to="/usr">个人中心</router-link>
+                    <router-link to="/mall">任务大厅</router-link>
                 </li>
                 <li>
                     <router-link to="/team">找装修</router-link>

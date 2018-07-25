@@ -21,6 +21,7 @@ import PageFindTeam from './pages/PageFindTeam.vue'
 import PageRebuilding from './pages/PageRebuilding.vue'
 import PersonalCenter from './pages/PersonalCenter.vue'
 import PersonalHome from './components/PersonalHome.vue'
+import ReleaseMall from './pages/ReleaseMall.vue'
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -36,6 +37,7 @@ const routes = [
   { path: '/guide', component: PageFindGuide },
   { path: '/servce', component: PageFindServce },
   { path: '/team', component: PageFindTeam },
+  { path: '/mall', component: ReleaseMall },
   {
     path: '/usr',
     component: PersonalCenter,
