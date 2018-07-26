@@ -4,28 +4,28 @@
             <img src="../assets/logo.png" class="toplogo left">
             <ul class="left">
                 <li>
-                    <router-link to="/">首页</router-link>
+                    <a href="/">首页</a>
                 </li>
                 <li>
                     <router-link to="/mall">任务大厅</router-link>
                 </li>
                 <li>
-                    <router-link to="/team">找装修</router-link>
+                    <a href="javascript:void(0)">找装修</a>
                 </li>
                 <li>
-                    <router-link to="/rebuilding">旧房改造</router-link>
+                    <a href="http://www.yizhuangw.cn/index.php?a=rebuilding&m=index">旧房改造</a>
                 </li>
                 <li>
-                    <router-link to="/servce">找服务</router-link>
+                    <a href="javascript:void(0)">找服务</a>
                 </li>
                 <li>
-                    <router-link to="/design">找设计</router-link>
+                    <a href="javascript:void(0)">找设计</a>
                 </li>
                 <li>
-                    <router-link to="/diary">装修日记</router-link>
+                    <a href="http://www.yizhuangw.cn/index.php?a=diary&m=decorationDiaryList">装修日记</a>
                 </li>
                 <li>
-                    <router-link to="/guide">装修攻略</router-link>
+                    <a href="http://www.yizhuangw.cn/index.php?a=decoration&m=index">装修攻略</a>
                 </li>
             </ul>
             <top-search></top-search>

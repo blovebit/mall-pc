@@ -25,11 +25,14 @@
                     
                 </ul>
                 <ul class="right">
-                    <li>
-                        <a @click="openLpane()">登录</a>
-                    </li>
 
-                    <li>
+                    <!-- 根据是否登录，渲染不同的入口 -->
+                    <li v-if="user"> <!-- 如果已经登录，提供个人中心入口 -->
+                        <router-link to="/user">{{ user.name }}</router-link>
+                    </li>
+                    <li v-else> <!-- 如果没有登录，提供登录/注册入口 -->
+                        <a @click="openLpane()">登录</a>
+                        /
                         <a @click="openSpane()">注册</a>
                     </li>
 
@@ -88,6 +91,12 @@ export default {
     components: {
         LoginPane,
         SignInPane
+    },
+    beforeMount () { // 渲染之前,获取登录信息
+        this.user = {
+            name: '1385565548'
+        }
+        console.warn(this.ispaneopen);
     }
 }
 </script>
