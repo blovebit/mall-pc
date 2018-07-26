@@ -67,7 +67,7 @@ export default {
     .main-footer{
         margin-top: 2em;
         padding: 1em 0;
-        background: #141a2a url(../assets/footerBg.jpg) center bottom no-repeat;
+        background: #141a2a url(../assets/images/footerBg.jpg) center bottom no-repeat;
     }
     div{
         padding: 1.3em 0;

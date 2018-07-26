@@ -92,7 +92,8 @@ export default {
         vertical-align: middle
     }
     [type="submit"]{
-        appearance: none;
+        -moz-appearance:button; /* Firefox */
+        -webkit-appearance:button; /* Safari 和 Chrome */
         width: 100%;
         border: 0;
         background: #00b062;

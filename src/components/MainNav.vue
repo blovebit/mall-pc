@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <div class="content clearfix">
-            <img src="../assets/logo.png" class="toplogo left">
+            <img src="../assets/images/logo.png" class="toplogo left">
             <ul class="left">
                 <li>
                     <a href="/">首页</a>

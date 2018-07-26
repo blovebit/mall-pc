@@ -13,18 +13,18 @@ export default {
         return {
             images: [
                 {
-                    src: require('../assets/focusindex01.jpg'),
+                    src: require('../assets/images/focusindex01.jpg'),
                     href: 'yizhuangw.cn'
                 },
                 {
-                    src: require('../assets/focusindex02.jpg')
+                    src: require('../assets/images/focusindex02.jpg')
                 },
                 {
-                    src: require('../assets/focusindex03.jpg'),
+                    src: require('../assets/images/focusindex03.jpg'),
                     href: 'baidu.com'
                 },
                 {
-                    src: require('../assets/focusindex04.jpg')
+                    src: require('../assets/images/focusindex04.jpg')
                 }
             ]
         }

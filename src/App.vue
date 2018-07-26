@@ -32,6 +32,6 @@ export default {
 </script>
 
 <style>
-@import url('./assets/style.css'); /* 公共样式 */
+@import url('./assets/css/common.css'); /* 公共样式 */
 @import url('../node_modules/@fortawesome/fontawesome-free/css/all.css'); /* fontawesome */
 </style>

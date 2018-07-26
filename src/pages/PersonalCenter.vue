@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import avatar from "../assets/avatar.png";
+import avatar from "../assets/images/avatar.png";
 export default {
     name: 'PersonalCenter',
     data () {
@@ -103,7 +103,7 @@ export default {
 <style scoped>
     .personal-center{
         padding-top: 2em;
-        background: url(../assets/BgPersonalCenter.jpg) center top no-repeat;
+        background: url(../assets/images/BgPersonalCenter.jpg) center top no-repeat;
     }
     .content{
         min-height: 650px;
