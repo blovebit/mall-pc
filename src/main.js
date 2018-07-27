@@ -4,6 +4,9 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
+// 模拟数据
+require('./mock.js');
+
 // 0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
 Vue.use(VueRouter);
 
@@ -50,3 +53,7 @@ new Vue({
 }).$mount('#app')
 
 // 现在，应用已经启动了！
+
+Vue.filter('getYMD', function(input){
+  return input.split(' ')[0];
+})
