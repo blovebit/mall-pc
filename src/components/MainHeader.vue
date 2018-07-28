@@ -96,7 +96,6 @@ export default {
         this.user = {
             name: '1385565548'
         }
-        console.warn(this.ispaneopen);
     }
 }
 </script>

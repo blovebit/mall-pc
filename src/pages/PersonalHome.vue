@@ -1,16 +1,18 @@
 <template>
     <div class="personal-home">
-        <news-cell
-        v-for="(item, key) in newsListShow"
-        :newsDate="item"
-        :key="key"
-        ></news-cell>
+        <!-- 测试mock,正式的稍后开发 -->
+        <div v-for="(item, key) in newsListShow"
+            :key="key"
+        >
+            {{item.name}}
+        </div>
     </div>
 </template>
 
 <script>
-import api from '../assets/js/api.js';
-import NewsCell from '../components/NewsCell.vue';
+// import api from '../assets/js/api.js';
+// import NewsCell from '../components/NewsCell.vue';
+
 export default {
     name: 'PersonalHome',
     data () {
@@ -18,19 +20,22 @@ export default {
             newsListShow: []
         }
     },
-    components: {
-        NewsCell
-    },
+    components: {},
     created () {
-        this.setNewsApi();
+        this.setRegionApi();
     },
     methods: {
-        setNewsApi: function () {
-            api.JH_news('./news/index', 'type=top&key=123456')
+        setRegionApi: function () {
+            this.$axios.post('/findRegion',{
+                RegionId: 25
+            })
             .then(res => {
-                window.console.log(res);
-                this.newsListShow = res.articles;
-            });
+                // window.console.log(res);
+                this.newsListShow = res.data.content.regionList;
+            })
+            .catch(error => {
+                window.console.log(error)
+            })
         }
     }
 }

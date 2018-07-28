@@ -4,6 +4,12 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
+// 全局配置axios
+import axios from 'axios';
+Vue.prototype.$axios = axios.create({
+  // baseURL: 'http://localhost:8080'
+});
+
 // 模拟数据
 require('./mock.js');
 
@@ -53,7 +59,3 @@ new Vue({
 }).$mount('#app')
 
 // 现在，应用已经启动了！
-
-Vue.filter('getYMD', function(input){
-  return input.split(' ')[0];
-})
