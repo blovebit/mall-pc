@@ -75,7 +75,15 @@ export default {
                 this.$refs.password.focus();
                 return
             }
-            window.console.log('点击了提交')
+            this.$axios.post('/login',{})
+            .then(res => {
+                // window.console.log(res.data)
+                this.$emit('logined', res.data.content)
+                this.closepane();
+            })
+            .catch(error => {
+                window.cosole.log(error)
+            })
         },
         turntosignin () {
             this.$emit('turn-to-sign-in')
