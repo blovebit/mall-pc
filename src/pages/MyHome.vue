@@ -14,7 +14,7 @@
 // import NewsCell from '../components/NewsCell.vue';
 
 export default {
-    name: 'PersonalHome',
+    name: 'MyHome',
     data () {
         return {
             newsListShow: []

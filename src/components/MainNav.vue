@@ -4,7 +4,7 @@
             <img src="../assets/images/logo.png" class="toplogo left">
             <ul class="left">
                 <li>
-                    <a href="/">首页</a>
+                    <router-link to="/">首页</router-link>
                 </li>
                 <li>
                     <router-link to="/mall">任务大厅</router-link>

@@ -3,17 +3,17 @@
         <div class="content">
             <div class="controlpane">
                 <div class="avatar">
-                    <img :src="myavatar">
+                    <img :src="userdata.myavatar">
                 </div>
-                <i v-if="isvip"
+                <i v-if="userdata.isvip"
                     class="vip fab fa-vuejs"
                 >
                 </i>
                 <div class="myinfo">
-                    <span class="myname">{{ myname }}</span>
+                    <span class="myname">{{ user.name || userdata.name }}</span>
                     <div class="mytags">
-                        <span class="mylevel"> {{ mylevel }}</span>
-                        <span v-if="isrealname"
+                        <span class="mylevel"> {{ userdata.level }}</span>
+                        <span v-if="userdata.isrealname"
                             class="isrealname"
                         >
                         实名认证
@@ -26,45 +26,33 @@
                         <span class="fas fa-lock"></span>
                     </div>
                 </div>
-                <ul>
+                <ul class="mymenu">
                     <li>
-                        <router-link to="/usr">
+                        <router-link to="/user">
                             我的主页
                             <i class="fas fa-angle-right"></i>
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/usr">
-                            我的合同
-                            <i class="fas fa-angle-right"></i>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/usr">
+                        <router-link to="/user/task">
                             我的订单
                             <i class="fas fa-angle-right"></i>
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/usr">
+                        <router-link to="/user/case">
                             我的案例
                             <i class="fas fa-angle-right"></i>
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/usr">
+                        <router-link to="/user/company">
                             我的公司
                             <i class="fas fa-angle-right"></i>
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/usr">
-                            我的消息
-                            <i class="fas fa-angle-right"></i>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/usr">
+                        <router-link to="/user/options">
                             账户设置
                             <i class="fas fa-angle-right"></i>
                         </router-link>
@@ -80,20 +68,24 @@
 import avatar from "../assets/images/avatar.png";
 export default {
     name: 'PersonalCenter',
+    props: {
+        user: Object
+    },
     data () {
         return {
-            myavatar: avatar,
-            isvip: true,
-            mytel: '18000000000',
-            myname: '姆巴佩',
-            mylevel: '高级',
-            isrealname: true
+            userdata:{ // 没有用户（未登录）时展示的数据
+                myavatar: avatar,
+                isvip: true,
+                mytel: '18000000000',
+                name: '用户',
+                level: '高级',
+                isrealname: true
+            }
         }
     },
-    props: {
-        // user: {
-        //     type: String,
-        //     required: true
+    created () {
+        // if (!this.user.name) {
+        //     this.$emit('no-user')
         // }
     },
     components: {}
@@ -169,11 +161,11 @@ export default {
     .myicons span + span{
         margin-left: 0.5em;
     }
-    ul{
+    .mymenu{
         border-top: 1px solid whitesmoke;
         margin-top: 2em;
     }
-    .router-link-active{
+    .mymenu a{
         padding: 1em 0;
         display: block;
         text-align: center;
@@ -183,7 +175,7 @@ export default {
         margin-left: 0.5em;
         color: darkgray;
     }
-    .router-link-exact-active{
+    .mymenu .router-link-exact-active{
         background-color: azure
     }
 </style>

@@ -5,7 +5,8 @@
             @signOut="signOut"
         ></main-header> <!-- 头部 -->
         <main-nav></main-nav> <!-- 导航 -->
-        <router-view :user="user"></router-view> <!-- 一级路由 -->
+        <router-view :user="user"
+        ></router-view> <!-- 一级路由 -->
         <main-footer></main-footer> <!-- 底部 -->
     </div>
 </template>
