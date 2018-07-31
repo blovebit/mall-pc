@@ -2,22 +2,22 @@
     <div class="error-page">
         <p>啊哦~一不小心进入了为止领域。</p>
         <ul>
-            <l>
+            <li>
                 <a href="/">没有登录？</a>
-            </l>
-            <l>
+            </li>
+            <li>
                 <a href="/">返回首页</a>
-            </l>
-            <l>
+            </li>
+            <li>
                 <a href="/">返回上页</a>
-            </l>
+            </li>
         </ul>
     </div>
 </template>
     
 <script>
 export default {
-    name: '',
+    name: 'ErrorPage',
     props: {},
     data () {
         return {}

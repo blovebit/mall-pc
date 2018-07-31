@@ -17,7 +17,7 @@ Vue.use(VueRouter);
 // 1.先配置基础路由
 // 其他个人中心的路由，等到用户登录以后
 // 再根据用户的类型，追加进去。
-import basicRouters from './router/basicRouters.js';
+import basicRouters from './routers/basicRouters.js';
 const routes = basicRouters;
 // 2.创建 router 实例
 const router = new VueRouter({

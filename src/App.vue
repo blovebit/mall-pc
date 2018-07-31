@@ -44,6 +44,10 @@ import MainFooter from './components/MainFooter.vue'; // 底部
 import LayEr from './components/LayEr.vue'; // 浮层
 import LoginPane from './components/LoginPane.vue'; // 登录框
 import RegisterPane from './components/RegisterPane.vue'; // 注册框
+// 路由配置文件
+import userRouters from './routers/userRouters'
+import designerRouters from './routers/designerRouters'
+import basicRouters from './routers/basicRouters'
 
 export default {
     name: 'app',
@@ -78,12 +82,24 @@ export default {
             // todo.. 设置cookie
             // cookie 的作用请求时验证用户权限
             // 也可以由后端设置
-            window.console.log(data);
+            // 根据用户类型配置路由
+            switch (data.roles[0].objectId){
+                case 16: // user
+                    this.$router.addRoutes(userRouters);
+                    break;
+                case 3: // designer
+                    this.$router.addRouters(designerRouters);
+                    break;
+                default: // 其他
+            }
+            this.$router.push({path:'/user'});
         },
         // 退出后
         signOut () {
             this.user = {}
             // todo.. 设置cookie
+            // 重置路由
+            this.$router = basicRouters
         }
     },
     components: {
