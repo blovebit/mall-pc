@@ -27,8 +27,13 @@
                 <ul class="right">
 
                     <!-- 根据是否登录，渲染不同的入口 -->
-                    <li v-if="user"> <!-- 如果已经登录，提供个人中心入口 -->
+                    <li v-if="user.objectId"
+                        class="userEntry"
+                    > <!-- 如果已经登录，提供个人中心入口 -->
                         <router-link to="/user">{{ user.name }}</router-link>
+                        /
+                        <!-- 退出 -->
+                        <a @click="signOut">退出登录</a>
                     </li>
                     <li v-else> <!-- 如果没有登录，提供登录/注册入口 -->
                         <a @click="openLpane()">登录</a>
@@ -59,6 +64,7 @@
             @close-pane="closepane"
             @turn-to-sign-in="openSpane"
             @turn-to-login="openLpane"
+            @logined="handleLogin"
         ></div>
     </div>
 </template>
@@ -74,6 +80,9 @@ export default {
             currentComponent: LoginPane
         }
     },
+    props: {
+        user: Object
+    },
     computed: {},
     methods: {
         closepane () {
@@ -86,17 +95,17 @@ export default {
         openSpane () {
             this.ispaneopen = true;
             this.currentComponent = SignInPane
+        },
+        handleLogin (data) {
+            this.$emit('logined', data)
+        },
+        signOut () {
+            this.$emit('signOut')
         }
     },
     components: {
         LoginPane,
         SignInPane
-    },
-    beforeMount () { // 渲染之前,获取登录信息
-        this.user = {
-            name: '1385565548'
-        }
-        console.warn(this.ispaneopen);
     }
 }
 </script>
@@ -114,5 +123,8 @@ export default {
     }
     .main-header li:first-child{
         margin-left: 0;
+    }
+    ul.right li:first-child a{
+        color: var(--main-color)
     }
 </style>

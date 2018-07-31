@@ -2,6 +2,8 @@
 :root {
 	text-align:justify;
 	text-justify:inter-ideograph;
+	--line-height: 1.42857143;
+	--main-color: #00b062;
 }
 @media screen and (min-width:1440px) {
 	html {

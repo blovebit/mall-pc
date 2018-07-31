@@ -1,5 +1,6 @@
 <template>
     <section class="financial-list">
+        <!-- 测试组件,用完就删 -->
         <section class="collect" @click="jumpPage">
             <aside>
                 <h2>{{newsDate.title}}</h2>
