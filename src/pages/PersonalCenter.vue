@@ -88,7 +88,16 @@ export default {
         //     this.$emit('no-user')
         // }
     },
-    components: {}
+    components: {},
+    // beforeRouteEnter (to, from, next) {
+        // 导航前鉴权
+        // next(vm => {
+            // alert(vm.user.objectId)
+            // if (!vm.user.objectId) {
+            //     return 'false'
+            // }
+        // })
+    // }
 }
 </script>
 

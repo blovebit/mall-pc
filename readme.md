@@ -2,7 +2,7 @@
 
 ## 今日任务
 
-- [mock数据](./src/mock.js)
+- 路由权限控制
 
 ## [api需求文档](./api_needs.md)
 
