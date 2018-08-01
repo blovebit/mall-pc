@@ -10,7 +10,7 @@ Vue.prototype.$axios = axios.create({
 });
 
 // 模拟数据
-require('./mock.js');
+require('./assets/js/mock.js');
 
 // 配置路由
 Vue.use(VueRouter);
