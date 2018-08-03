@@ -1,55 +1,46 @@
 <template>
-    <div class="layer">
-        <form name="login">
+    <form name="login">
 
-            <h3>登录<small>sign up</small></h3>
+        <h3>登录<small>sign up</small></h3>
 
-            <div class="itemfield">
-                <label for="usr">用户</label>
-                <input type="text"
-                    v-model="usr"
-                    name="usr"
-                    ref="usr"
-                    placeholder="用户名/手机号/邮箱"
-                >
-            </div>
-
-            <div class="itemfield">
-                <label for="password">密码</label>
-                <input type="password"
-                    v-model="password"
-                    name="password"
-                    ref="password"
-                    placeholder="密码（不能使用空格开头和结尾）"
-                >
-            </div>
-
-            <!-- <div class="itemfield">
-                <input type="checkbox"
-                    name="remAccount"
-                >
-                <label for="remAccount">记住账号</label>
-            </div> -->
-
-            <input type="submit"
-                @click.self.prevent="submit"
-                value="登录"
-                class="itemfield"
+        <div class="itemfield">
+            <label for="usr">用户</label>
+            <input type="text"
+                v-model="usr"
+                name="usr"
+                ref="usr"
+                placeholder="用户名/手机号/邮箱"
             >
+        </div>
 
-            <i class="fas fa-times"
-                @click="closepane"
-            ></i>
+        <div class="itemfield">
+            <label for="password">密码</label>
+            <input type="password"
+                v-model="password"
+                name="password"
+                ref="password"
+                placeholder="密码（不能使用空格开头和结尾）"
+            >
+        </div>
 
-            <div class="turnto">
-                没有账号？
-                <a @click.self="turntosignin">
-                    立即注册
-                </a>
-            </div>
+        <input type="submit"
+            @click.self.prevent="submit"
+            value="登录"
+            class="itemfield"
+        >
 
-        </form>
-    </div>
+        <i class="fas fa-times"
+            @click="closeLayer"
+        ></i>
+
+        <div class="turnto">
+            没有账号？
+            <a @click.self="goRegister">
+                立即注册
+            </a>
+        </div>
+
+    </form>
 </template>
 
 <script>
@@ -78,18 +69,18 @@ export default {
             this.$axios.post('/login',{})
             .then(res => {
                 // window.console.log(res.data)
-                this.$emit('logined', res.data.content)
-                this.closepane();
+                this.$emit('log-in', res.data.content)
+                this.closeLayer();
             })
             .catch(error => {
-                window.cosole.log(error)
+                window.console.log(error)
             })
         },
-        turntosignin () {
-            this.$emit('turn-to-sign-in')
+        goRegister () {
+            this.$emit('go-register')
         },
-        closepane () {
-            this.$emit('close-pane')
+        closeLayer () {
+            this.$emit('close-layer')
         }
     }
 }

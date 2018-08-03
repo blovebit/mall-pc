@@ -1,3 +1,18 @@
+# 7月31日-8月5日工作总结
+- 8.2 [注册](https://github.com/xixililian/mall-mob/blob/master/src/pages/RegisterPage.vue)页面开发
+- 8.1 [移动端路由配置](https://github.com/xixililian/mall-mob/tree/master/src/routers)
+- 8.1 移动端[登录](https://github.com/xixililian/mall-mob/blob/master/src/pages/LoginPage.vue)
+
+- 7.31 路由权限控制
+
+  - 初始只给任务大厅的路由
+  - 登录后，根据用户类型配置路由项
+  - 普通用户有：我的主页（默认）、我的订单、账户设置，以及错误页
+  - 设计师有：我的主页、我的订单、我的案例、我的公司、账户设置，以及错误页
+  - 配置：[初始配置](./src/routers/basicRouters.js)、[用户](./src/routers/userRouters.js)、[设计师](./src/routers/designerRouters.js)
+
+- 7.31 登录注册组件提至[跟实例](./src/App.vue)，便于user数据的维护和使用
+
 # 7月24日-29日工作总结
 
 - 解决前端开发过程中，没有后端数据的问题；

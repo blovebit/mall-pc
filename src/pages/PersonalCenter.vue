@@ -39,13 +39,13 @@
                             <i class="fas fa-angle-right"></i>
                         </router-link>
                     </li>
-                    <li>
+                    <li v-if="user.roles[0].objectId === 3">
                         <router-link to="/user/case">
                             我的案例
                             <i class="fas fa-angle-right"></i>
                         </router-link>
                     </li>
-                    <li>
+                    <li v-if="user.roles[0].objectId === 3">
                         <router-link to="/user/company">
                             我的公司
                             <i class="fas fa-angle-right"></i>
@@ -88,7 +88,16 @@ export default {
         //     this.$emit('no-user')
         // }
     },
-    components: {}
+    components: {},
+    // beforeRouteEnter (to, from, next) {
+        // 导航前鉴权
+        // next(vm => {
+            // alert(vm.user.objectId)
+            // if (!vm.user.objectId) {
+            //     return 'false'
+            // }
+        // })
+    // }
 }
 </script>
 
