@@ -1169,6 +1169,7 @@
     {
         'company_id': // 装修公司id。
         'keyword': // 用户查询的关键字，默认为空。
+        'mark': // 默认为空 ，显示位置。
         'isrecommend': // 默认为空，获取全部；1为获取推荐的。
         'valid': // 默认为空，获取全部。1为获取有效期内的，2为过期的。
         'ishot': // 默认为空，获取全部。1为获取hot的。
@@ -1743,3 +1744,95 @@
 - 只有属于平台设计师才可发起申请，已有公司的设计师没有此操作
 
 ## 获取系统参数列表（rest-macro-controller 该接口已有）
+
+## (公司)提交活动操作
+
+### 请求方式
+
+    POST
+    
+### query
+
+    {
+        'position_id': //展示位置id
+        'ad_title': //广告名称
+        'ad_content': //广告内容
+        'ad_link': //广告链接
+        'area_name': string //活动有效地区
+        'start_time':  //活动开始时间
+        'end_time':  //活动结束时间
+        'link_type': int //活动内链或外链 0-外部链接 1-内容链
+        'link_type': int //活动内链或外链 0-外部链接 1-内容链
+        'is_show': //是否公司首页显示
+        'is_hot': //是否热门
+        'is_recommend': //是否推荐
+        'cover_id': //封面图id
+        'province_id': //所属省
+        'city_id': //所属城市
+        'region_id': //所属区
+        'type':int //该活动属于公司1为平台，2为公司
+    }  
+    
+### 返回数据
+
+    {
+        //...status,message
+    }      
+
+## （公司）上传活动封面图
+
+### 请求方式
+
+    POST
+    
+### 参数
+
+    token
+    
+### query
+
+    {
+        'iamge_type': String, // 'image'
+        'width': Int, // 图片宽度 px
+        'height': Int, // 图片高度 px
+        'size': Int, // 图片大小 bye
+    }
+    
+### 返回数据
+
+    {
+        // ... status, message
+        'content': {
+            'content': {
+                'img_id': Int // 图片ID
+                'ori_path': // 原始图路径
+                'big_path': // 大图路径
+                'mid_path': // 中图路径
+                'sml_path': // 小图路径
+            }
+        }
+    }  
+    
+
+## 提交申请等级
+
+### 请求方式
+
+    POST
+    
+### 参数
+
+    token
+    
+### query
+
+    {
+        'level': //申请等级
+        'content': //申请说明
+    }
+    
+### 返回数据
+
+    {
+        // ... status, message
+    }
