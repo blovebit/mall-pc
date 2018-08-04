@@ -223,45 +223,45 @@ GET
             'task_list': [
                 {
                     'layout_pic': { // 户型图
-                        'ori_path': // 原始图路径
-                        'big_path': // 大图路径
-                        'mid_path': // 中图路径
-                        'sml_path': // 小图路径
+                        'ori_path': '', // 原始图路径
+                        'big_path': '', // 大图路径
+                        'mid_path': '', // 中图路径
+                        'sml_path': 'https://source.unsplash.com/random/600x480?a', // 小图路径
                     },
-                    'id': //订单id
-                    'sn': // 订单编号
-                    'level': // 订单等级，1，2，3，4，5，6
-                    'budget': // 设计预算
-                    'unit': // 户型
-                    'area': // 面积
-                    'style': // 风格
-                    'house_status': // '旧房翻新'||'新房'
-                    'hosue_type': // '跃层'||'平层'||'别墅'
-                    'village': // 小区名
-                    'province': // 省份
-                    'city': // 市
-                    'region': // 区
-                    'release_time': // 审核通过时间
-                    'create_tiem': // 创建时间
-                    'end_time': // 订单到期时间
-                    'need_num': //允许最大抢单人数
-                    'designder_num': //目前抢单设计师人数
+                    'id': 52, //订单id
+                    'sn': '255454554', // 订单编号
+                    'level': 5, // 订单等级，1，2，3，4，5，6
+                    'budget': '8000', // 设计预算
+                    'unit': '二室两厅', // 户型
+                    'area': 79, // 面积
+                    'style': '欧式', // 风格
+                    'house_status': '新房', // '旧房翻新'||'新房'
+                    'hosue_type': '平层', // '跃层'||'平层'||'别墅'
+                    'village': '范德萨是', // 小区名
+                    'province': '四川省', // 省份
+                    'city': '成都市', // 市
+                    'region': '金牛区', // 区
+                    'release_time': '1533367887380', // 审核通过时间
+                    'create_time': '1533367887380', // 创建时间
+                    'end_time': '1533454287380', // 订单到期时间
+                    'need_num': 7, // 允许最大抢单人数
+                    'designder_num': 5, // 目前抢单设计师人数
                     'designer_list':[ // 已经抢单的设计师
                         {
-                            'id':
-                            'name':
+                            'id': 58, // id
+                            'name': '王羲之', // 名字
                             'avatar':{ // 头像
-                                'ori_path': // 原始图路径
-                                'big_path': // 大图路径
-                                'mid_path': // 中图路径
-                                'sml_path': // 小图路径
+                                'ori_path': '', // 原始图路径
+                                'big_path': '', // 大图路径
+                                'mid_path': '', // 中图路径
+                                'sml_path': 'https://source.unsplash.com/random/60x60?a', // 小图路径
                             },
-                            'level':
-                        },
-                        // ...
-                    ],
+                            'level': 5 // 设计师等级
+                        }
+                        // ..
+                    ]
                 },
-                / ...
+                // ...
             ],
             'page_total': //数据总条数
         }
