@@ -1,4 +1,9 @@
+# 8月7日-8月12日工作总结
+
+- 8.7 登录注册组件提至[跟实例](./src/App.vue)，便于user数据的维护和使用
+
 # 7月31日-8月5日工作总结
+
 - 8.2 [注册](https://github.com/xixililian/mall-mob/blob/master/src/pages/RegisterPage.vue)页面开发
 - 8.1 [移动端路由配置](https://github.com/xixililian/mall-mob/tree/master/src/routers)
 - 8.1 移动端[登录](https://github.com/xixililian/mall-mob/blob/master/src/pages/LoginPage.vue)
