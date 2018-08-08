@@ -207,66 +207,67 @@ GET
 
 ### 参数
 
-{
-    'page': Int, // 分页参数
-    'size': Int, // 每页数据量
-    'order_status': Int, // 按订单状态筛选；默认为空，不筛选；1为招标中；2为已结标；
-    'sort_by_time': Int, // 按审核时间排序；默认为空，不排序；1为倒序；2为正序；
-    'sort_by_level': Int, // 按订单等级排序；默认为空，不排序；1为倒序；2为正序；
-    'level': Int, // 按等级筛选；默认为空，不筛选；1，2，3，4，5，6
-}
+   
+    {
+        'page': Int, // 分页参数
+        'size': Int, // 每页数据量
+        'order_status': Int, // 按订单状态筛选；默认为空，不筛选；1为招标中；2为已结标；
+        'sort_by_time': Int, // 按审核时间排序；默认为空，不排序；1为倒序；2为正序；
+        'sort_by_level': Int, // 按订单等级排序；默认为空，不排序；1为倒序；2为正序；
+        'level': array, // 按等级筛选可抢单；默认为空，不筛选；[1，2，3，4，5，6]
+    }
 
 ### 返回数据
 
-{
-    // ... status, message
-    'content': {
-        'task_list': [
-            {
-                'layout_pic': { // 户型图
-                    'ori_path': // 原始图路径
-                    'big_path': // 大图路径
-                    'mid_path': // 中图路径
-                    'sml_path': // 小图路径
-                },
-                'id': //订单id
-                'sn': // 订单编号
-                'level': // 订单等级，1，2，3，4，5，6
-                'budget': // 设计预算
-                'unit': // 户型
-                'area': // 面积
-                'style': // 风格
-                'house_status': // '旧房翻新'||'新房'
-                'hosue_type': // '跃层'||'平层'||'别墅'
-                'village': // 小区名
-                'province': // 省份
-                'city': // 市
-                'region': // 区
-                'release_time': // 审核通过时间
-                'create_tiem': // 创建时间
-                'end_time': // 订单到期时间
-                'need_num': //允许最大抢单人数
-                'designder_num': //目前抢单设计师人数
-                'designer_list':[ // 已经抢单的设计师
-                    {
-                        'id':
-                        'name':
-                        'avatar':{ // 头像
-                            'ori_path': // 原始图路径
-                            'big_path': // 大图路径
-                            'mid_path': // 中图路径
-                            'sml_path': // 小图路径
-                        },
-                        'level':
+    {
+        // ... status, message
+        'content': {
+            'task_list': [
+                {
+                    'layout_pic': { // 户型图
+                        'ori_path': // 原始图路径
+                        'big_path': // 大图路径
+                        'mid_path': // 中图路径
+                        'sml_path': // 小图路径
                     },
-                    // ...
-                ],
-            },
-            / ...
-        ],
-        'page_total': //数据总条数
+                    'id': //订单id
+                    'sn': // 订单编号
+                    'level': // 订单等级，1，2，3，4，5，6
+                    'budget': // 设计预算
+                    'unit': // 户型
+                    'area': // 面积
+                    'style': // 风格
+                    'house_status': // '旧房翻新'||'新房'
+                    'hosue_type': // '跃层'||'平层'||'别墅'
+                    'village': // 小区名
+                    'province': // 省份
+                    'city': // 市
+                    'region': // 区
+                    'release_time': // 审核通过时间
+                    'create_tiem': // 创建时间
+                    'end_time': // 订单到期时间
+                    'need_num': //允许最大抢单人数
+                    'designder_num': //目前抢单设计师人数
+                    'designer_list':[ // 已经抢单的设计师
+                        {
+                            'id':
+                            'name':
+                            'avatar':{ // 头像
+                                'ori_path': // 原始图路径
+                                'big_path': // 大图路径
+                                'mid_path': // 中图路径
+                                'sml_path': // 小图路径
+                            },
+                            'level':
+                        },
+                        // ...
+                    ],
+                },
+                / ...
+            ],
+            'page_total': //数据总条数
+        }
     }
-}
 
 ## （任务大厅）获取订单详情: getTaskDetail
 
@@ -371,7 +372,7 @@ GET
 - 冻结状态的设计师不能抢单
 - 抢单成功给予积分奖励，多少由后台配置
 
-## （设计师）获取订单列表: getDesignerTaskList
+## （设计师，用户，公司公用）获取订单列表: getMyTaskList
 
 ### 场景
 
@@ -399,100 +400,46 @@ GET
 
     {
         // ... status, message
-        'content': {
-            'content': [
-                {
-                    'layout_pic': { // 户型图路径
-                        'ori_path': //原
-                        'big_path':  //大
-                        'mid_path': //中
-                        'sml_path': //小
-                    },
-                    'id': //订单id
-                    'sn': // 订单编号
-                    'level': // 订单等级，1，2，3，4，5，6
-                    'budget': // 设计预算
-                    'unit': // 户型
-                    'area': // 面积
-                    'style': // 风格
-                    'house_status': // '旧房翻新'||'新房'
-                    'hosue_type': // '跃层'||'平层'||'别墅'
-                    'village': // 小区名
-                    'province': // 省份
-                    'city': // 市
-                    'region': // 区
-                    'release_time': // 审核通过时间
-                    'create_tiem': // 创建时间
-                    'valid_time': // 订单到期时间
-                    'step_num': //当前步骤数
-                    'process_status': string // 下一步进度描述文字，
+       'tasklist': [ //array订单列表
+            {
+                'id': 1, // 订单id
+                'sn': '', // 订单编号11为数字的字符串
+                'level': 1, // 订单等级，1，2，3，4，5，6
+                'free': true, // 免费订单，false为付费订单
+                'budget': 1, // 设计预算
+                'unit': '', // 户型
+                'area': 1, // 面积
+                'style': '', // 风格
+                'house_status': '', // '旧房翻新'||'新房'
+                'house_type': '', // '跃层'||'平层'||'别墅'
+                'village': '', // 小区名
+                'province': '', // 省份
+                'city': '', // 市
+                'region': '', // 区
+                'release_time': int,// 审核通过时间
+                'create_tiem': int,// 创建时间
+                'remain_time': int,// 订单剩余时间戳
+                'step_num': 1, // 当前步骤数
+                'step_discript': '', // 当前步骤描述
+                'layout_pic': { // 户型图路径
+                    'ori_path': '', // 原
+                    'big_path': '', // 大
+                    'mid_path': '', // 中
+                    'sml_path': '', // 小
                 },
-                / ...
-            ],
-            'page_total': //数据总条数
-        }
+                'designer|0-8': [ // 订单当前设计师们
+                    {
+                        "name": "", // 名字
+                        "objectId": 1, // id
+                        'avatar': '', // 头像路径 120px左右那个图
+                    }
+                ]
+            }
+        ]
+        'page_total': //数据总条数
     }
 
-## （用  户）获取订单列表: getTaskList
 
-### 场景
-
-用户个人中心，查看我的订单
-
-### 获取方式
-
-    POST
-
-### 参数
-
-#### header
-
-    token
-
-#### query
-
-    {
-        'page': //页码
-        'size': //每页数量
-        'status': // 空：全部；1：订单进行中；2：订单已完结；此状态需从订单表中查看
-    }
-
-### 返回数据
-
-    {
-        // ... status, message
-        'content': {
-            'content': [
-                {
-                    'layout_pic': { // 户型图路径
-                        'ori_path': // 原始图路径
-                        'big_path': // 大图路径
-                        'mid_path': // 中图路径
-                        'sml_path': // 小图路径
-                    },
-                    'id':
-                    'sn': // 订单编号
-                    'level': // 订单等级，1，2，3，4，5，6
-                    'budget': // 设计预算
-                    'unit': // 户型
-                    'area': // 面积
-                    'style': // 风格
-                    'house_status': // '旧房翻新'||'新房'
-                    'hosue_type': // '跃层'||'平层'||'别墅'
-                    'village': // 小区名
-                    'province': // 省份
-                    'city': // 市
-                    'region': // 区
-                    'release_time': // 审核通过时间
-                    'create_tiem': // 创建时间
-                    'end_time': // 订单到期时间
-                    'process_status': // 向用户展示当前进度描述的文字
-                },
-                / ...
-            ]
-            'page_total': //数据总条数
-        }
-    }
 
 ## （设计师）提交方案: commitDraft
 
@@ -524,7 +471,7 @@ GET
         '3d_url': // 3d案例的链接
         'explain': // 设计说明
         'process_id': // 进度ID
-        'type': // 1为初稿、2为终稿、3为施工图
+        'type': // 1为初稿、2为终稿、3为上传设计师自己案例
     }
 
 ### 返回数据
@@ -752,54 +699,6 @@ GET
 
 - 用户评价成功给与积分奖励，多少由后台配置
 
-## （公  司）获取订单列表: getCompanyTaskList
-
-### 获取方式
-
-    GET
-
-### 参数
-
-#### header
-
-    token
-
-#### query
-
-    {
-        'page': //页码
-        'size': //每页数量
-        'status': // 默认为空，查询全部；1查询进行中的订单；2查询已经完结的订单
-    }
-
-### 返回数据
-
-    {
-        // ... status, message
-        'content':{
-            task_list': [
-                {
-                    'id': // 订单id
-                    'sn': // 订单编号
-                    'village': // 小区名称
-                    'area': // 面积
-                    'style': // 风格
-                    'unit': // 户型
-                    'designer_id': // 抢单设计师
-                    'designer_name': // 抢单设计师
-                    'need_review': // 是否有需要审核设计初稿或终稿，从进度表查询审核状态
-                    'step_num': // 订单当前进度步数
-                    'step_title': // 订单当前进度名称
-                }
-                // ...
-            ],
-            'page_total': //数据总条数
-        }
-    }
-
-### 说明
-
-数据列表排序：最新需审核的订单排在最前面，其余按时间倒序
 
 ## （公  司）查看订单详情: getCompanyTaskDetail
 
